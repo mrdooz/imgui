@@ -5,7 +5,17 @@
 //-----------------------------------------------------------------------------
 
 #pragma once
+#include <dlib/math/tano_math.hpp>
 
+#define IM_VEC2_CLASS_EXTRA \
+    ImVec2(const float2& v) : x(v.x), y(v.y) {} \
+    operator float2() const { return float2(x, y); }
+
+#define IM_VEC3_CLASS_EXTRA \
+    ImVec3(const float3& v) : x(v.x), y(v.y), z(v.z) {} \
+    operator float3() const { return float3(x, y, z); }
+
+#define ImDrawIdx unsigned int
 //---- Define assertion handler. Defaults to calling assert().
 //#define IM_ASSERT(_EXPR)  MyAssert(_EXPR)
 
